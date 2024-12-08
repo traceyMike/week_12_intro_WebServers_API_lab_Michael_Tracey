@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- page title -->
+    <title>BMI Calculator</title>
+
+    <link rel="stylesheet" href="/stylesheets/style.css"> <!--import the stylesheet-->
+</head>
+<body>
+    <div class="header bg-secondary-subtle mb-4 p-4 rounded-3 text-center"> <!-- create div element with bootstrap classes -->
+        <!--bootstrap classes for background color, margin-bottom, padding, round corners, centered text-->
+        
+        <h1>Body Mass Index Calculator</h1>
+    </div>
+
+    <div class="row"> <!--bootstrap grid container, contains two col elements-for instructions and the other form-->
+        <div class="col-md-5"> <!--create column in row, width of 5 out of 12 columns for medium size-->
+            <h2>Instructions</h2>
+            <p>Enter your height in meters and yor weight in kilograms to calculate your BMI.</p>
+        </div>
+
+        <div class="col-md-7"> <!--create another-->
+            <!--step="0.01" allows deciamls and required ensures user cannot submit form without a value-->
+            <form action="/calculate-bmi" method="POST"> <!--collect user height and weight and submit to server-->
+                <label class="form-label" for="height">Height in meters:</label>
+                <input class="form-control input-short" type="number" id="height" name="height" step="0.01" required>
+                <br>
+                <!---->
+                <label class="form-label" for="weight">Weight in kilograms:</label>
+                <input class="form-control input-short" type="number" id="weight" name="weight" step="0.01" required>
+                <br>
+
+                <input class="btn btn-primary" type="submit" value="Calculate">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
